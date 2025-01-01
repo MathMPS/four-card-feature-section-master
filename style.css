@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+--Red: hsl(0, 78%, 62%);
+--Cyan: hsl(180, 62%, 55%);
+--Orange: hsl(34, 97%, 64%);
+--Blue: hsl(212, 86%, 64%);
+--Very-Dark-Blue: hsl(234, 12%, 34%);
+--Grayish-Blue: hsl(229, 6%, 66%);
+--Very-Light-Gray: hsl(0, 0%, 98%);
+font-family: "Poppins", serif;
+font-size: 15px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--Very-Light-Gray);
+}
+
+main{
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem;
+}
+.up{
+    width: 320px;
+    height: 220px;
+    text-align: center;
+}
+h1{
+    color: var(--Very-Dark-Blue);
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+span{
+    color: var(--Grayish-Blue);
+    font-weight: 400;
+}
+.up p {
+    color: var(--Grayish-Blue);
+    font-weight: 400;
+}
+.down{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.card{
+    background-color: white;
+    box-shadow: 9px 10px 36px -3px rgba(0,0,0,0.42);
+    width: 320px;
+    height: 240px;
+    border-radius: .5rem;
+    padding: 2rem;
+}
+
+.cyan{
+    border-top: solid 4px var(--Cyan);
+}
+
+.red{
+    border-top: solid 4px var(--Red);
+}
+
+.orange{
+    border-top: solid 4px var(--Orange);
+}
+
+.blue{
+    border-top: solid 4px var(--Blue);
+}
+
+h2{
+    color: var(--Very-Dark-Blue);
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+
+.down p{
+    color: var(--Grayish-Blue);
+    font-weight: 200;
+}
+
+.down img{
+    display: block;
+    position: relative;
+    top: 2rem;
+    left: 13rem;
+
+}
+
+@media (min-width: 850px) {
+    .up{
+    width: auto;
+    height: 200px;
+    text-align: center;
+    }
+    h1{
+        padding: 0 5rem;
+    }
+
+    .down{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "start mid1 end"
+        "start mid2 end";
+        gap: 1.5rem;       
+    }
+    .cyan  {
+        grid-area: start;
+        align-self: center;
+    }
+
+    .red {
+        grid-area: mid1;
+    }
+    .orange {
+        grid-area: mid2;
+    }
+    .blue {
+        grid-area: end;
+        align-self: center;
+    }
+
+    .card{
+        transition: all 0.3s ease-in;
+    }
+
+    .card:hover{
+        cursor: pointer;
+        transform: scale(1.1)
+    }
+    
+}
